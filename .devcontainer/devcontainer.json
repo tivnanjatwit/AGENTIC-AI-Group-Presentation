@@ -1,0 +1,22 @@
+{
+  "name": "n8n-dev",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dev",
+    "args": {
+      "NODE_VERSION": "24.13.1",
+      "N8N_VERSION": "latest"
+    }
+  },
+  "remoteUser": "node",
+  "forwardPorts": [5678],
+  "postCreateCommand": "n8n --version",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "sh"
+      }
+    }
+  }
+}
